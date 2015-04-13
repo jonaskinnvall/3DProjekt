@@ -34,7 +34,7 @@ var init = function(){
 	//////////////////////////////////////////////////////////////////////////////////
 	//		add an object and make it move					//
 	//////////////////////////////////////////////////////////////////////////////////	
-	var geometry	= new THREE.CubeGeometry(2, 3, 4);
+	var geometry	= new THREE.CubeGeometry(1, 1, 1);
 	var material	= new THREE.MeshPhongMaterial();
 	var mesh	= new THREE.Mesh( geometry, material );
 	scene.add( mesh );
