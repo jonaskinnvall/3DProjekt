@@ -7,3 +7,7 @@ https://stemkoski.github.io/Three.js/
 https://stemkoski.github.io/Three.js/Skybox.html
 
 https://stemkoski.github.io/Three.js/Collision-Detection.html
+
+https://stemkoski.github.io/Three.js/Mesh-Movement.html
+
+https://stemkoski.github.io/Three.js/Chase-Camera.html
