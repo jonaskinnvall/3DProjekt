@@ -11,3 +11,7 @@ https://stemkoski.github.io/Three.js/Collision-Detection.html
 https://stemkoski.github.io/Three.js/Mesh-Movement.html
 
 https://stemkoski.github.io/Three.js/Chase-Camera.html
+
+http://matthew.wagerfield.com/parallax/
+
+http://mozvr.com/projects/sechelt/
