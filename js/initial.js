@@ -4,7 +4,7 @@ var init = function(){
 	if( !Detector.webgl ){
 		Detector.addGetWebGLMessage();
 		throw 'WebGL Not Available'
-	} 
+	}
 	// setup webgl renderer full page
 	var renderer	= new THREE.WebGLRenderer();
 	renderer.setSize( window.innerWidth, window.innerHeight );
@@ -21,7 +21,7 @@ var init = function(){
 	var winResize	= new THREEx.WindowResize(renderer, camera)	//////////////////////////////////////////////////////////////////////////////////
 	//		default 3 points lightning					//
 	//////////////////////////////////////////////////////////////////////////////////
-	
+
 	var ambientLight= new THREE.AmbientLight( 0x020202 )
 	scene.add( ambientLight)
 	var frontLight	= new THREE.DirectionalLight('white', 1)
@@ -29,21 +29,21 @@ var init = function(){
 	scene.add( frontLight )
 	var backLight	= new THREE.DirectionalLight('white', 0.75)
 	backLight.position.set(-0.5, -0.5, -2)
-	scene.add( backLight )		
-	
+	scene.add( backLight )
+
 	//////////////////////////////////////////////////////////////////////////////////
 	//		add an object and make it move					//
-	//////////////////////////////////////////////////////////////////////////////////	
+	//////////////////////////////////////////////////////////////////////////////////
 	var geometry	= new THREE.CubeGeometry(1, 1, 1);
 	var material	= new THREE.MeshPhongMaterial();
 	var mesh	= new THREE.Mesh( geometry, material );
 	scene.add( mesh );
-	
+
 	onRenderFcts.push(function(delta, now){
 		mesh.rotateX(0.5 * delta);
-		mesh.rotateY(2.0 * delta);		
+		mesh.rotateY(2.0 * delta);
 	})
-	
+
 	//////////////////////////////////////////////////////////////////////////////////
 	//		Camera Controls							//
 	//////////////////////////////////////////////////////////////////////////////////
@@ -62,9 +62,9 @@ var init = function(){
 	//		render the scene						//
 	//////////////////////////////////////////////////////////////////////////////////
 	onRenderFcts.push(function(){
-		renderer.render( scene, camera );		
+		renderer.render( scene, camera );
 	})
-	
+
 	//////////////////////////////////////////////////////////////////////////////////
 	//		Rendering Loop runner						//
 	//////////////////////////////////////////////////////////////////////////////////
@@ -83,4 +83,3 @@ var init = function(){
 	})
 })
 }
-
