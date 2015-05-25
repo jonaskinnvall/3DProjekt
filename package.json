@@ -1,0 +1,12 @@
+{
+  "name": "3dprojekt",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "cannon": "^0.6.2",
+    "three": "^0.70.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
