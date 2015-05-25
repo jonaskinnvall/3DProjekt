@@ -1,13 +1,13 @@
 var init = function(){
 
       var world, mass, body, shape, timeStep=1/60,
-         camera, scene, renderer, geometry, material, mesh;
+         camera, scene, renderer, geometry, material, mesh, circle, plane;
       initThree();
       initCannon();
       animate();
       function initCannon() {
           world = new CANNON.World();
-          world.gravity.set(0,0,0);
+          world.gravity.set(0,-1,0);
           world.broadphase = new CANNON.NaiveBroadphase();
           world.solver.iterations = 10;
           shape = new CANNON.Box(new CANNON.Vec3(1,1,1));
@@ -47,6 +47,72 @@ var init = function(){
           material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
           mesh = new THREE.Mesh( geometry, material );
           scene.add( mesh );
+
+		
+          var geometry = new THREE.PlaneGeometry( 20, 20, 32 );
+			var material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
+			var plane = new THREE.Mesh( geometry, material );
+			scene.add( plane );
+			
+			plane.rotation.x += 3.14/2;
+			plane.position.y -= 2;
+
+
+			var geometry = new THREE.SphereGeometry( 3, 52, 52 );
+			var material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+			var sphere = new THREE.Mesh( geometry, material );
+			scene.add( sphere );
+
+			sphere.position.x += 5;
+			sphere.position.z -= 10;
+			sphere.position.y += 2;
+
+			var keys = {};
+
+	$(document).keydown( function(e){
+
+		keys[e.which] = true;
+
+		rotate();
+
+	});
+
+	$(document).keyup( function(e) {
+	
+		delete keys[e.which];
+
+		rotate();
+
+	});
+
+	
+
+	function rotate(){
+
+		for (var i in keys) {
+
+			if(i == 37)
+				mesh.position.y -= 0.1;
+			if(i == 38)
+				mesh.position.x -= 0.1;
+			if(i == 39)
+				mesh.position.y += 0.1;
+			if(i == 40)
+				mesh.position.x += 0.1;
+			if(i == 65)
+				mesh.position.x -= 0.1;
+			if(i == 87)
+				mesh.position.z -= 0.1;
+			if(i == 68)
+				mesh.position.x += 0.1;
+			if(i == 83)
+				mesh.position.z += 0.1;
+
+		}
+
+	}
+
+
           	// RENDERER
 			if ( Detector.webgl )
 				renderer = new THREE.WebGLRenderer( {antialias:true} );
@@ -73,5 +139,7 @@ var init = function(){
       function render() {
           renderer.render( scene, camera );
       }
+
+      
 }
 
