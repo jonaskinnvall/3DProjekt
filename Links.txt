@@ -15,3 +15,6 @@ https://stemkoski.github.io/Three.js/Chase-Camera.html
 http://matthew.wagerfield.com/parallax/
 
 http://mozvr.com/projects/sechelt/
+
+STARTER KIT:
+http://matthiasschuetz.com/three-basicthirdpersongame/
