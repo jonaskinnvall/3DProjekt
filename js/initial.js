@@ -7,7 +7,8 @@ var init = function(){
          windowHalfX = window.innerWidth / 2, windowHalfY = window.innerHeight / 2;
 
             texture = THREE.ImageUtils.loadTexture("http://s3.postimg.org/gz4fv8q9v/mountains.jpg "); //http://s3.postimg.org/gz4fv8q9v/mountains.jpg
-            texture.minFilter = THREE.NearestFilter;   
+            texture.minFilter = THREE.NearestFilter;
+
 
       initCannon();
       initThree();
@@ -15,7 +16,7 @@ var init = function(){
 
       function initCannon() {
           world = new CANNON.World();
-          world.gravity.set(0,0,0);
+          world.gravity.set(0,-1,0);
           world.broadphase = new CANNON.NaiveBroadphase();
           world.solver.iterations = 10;
           
@@ -150,5 +151,7 @@ var init = function(){
           camera.lookAt( scene.position );
           renderer.render( scene, camera );
       }
+
+      
 }
 
