@@ -35,7 +35,7 @@ var color = 0x000000;
    camera.position.z = 5;
 
    // Load the background texture
-   var texture = THREE.ImageUtils.loadTexture( 'http://s3.postimg.org/gz4fv8q9v/mountains.jpg' );
+   var texture = THREE.ImageUtils.loadTexture( 'https://linuxradar.files.wordpress.com/2014/06/ih9dnii.png' );
    var backgroundMesh = new THREE.Mesh(
        new THREE.PlaneGeometry(2, 2, 0),
        new THREE.MeshBasicMaterial({
